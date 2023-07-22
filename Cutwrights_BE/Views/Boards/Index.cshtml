@@ -1,0 +1,164 @@
+﻿@model PaginatedList<BoardsEntity>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+@*
+<h3>Boards - <a asp-action="Create">Create New</a></h3>
+    <br />*@
+    <!--<div class="toggled" id="wrapper">
+        <div id="sidebar-wrapper">
+             <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="~/Boards">Boards</a>
+                </li>
+                <li class="sidebar-brand">
+                    <a href="~/Materials">Materials</a>
+                </li>
+                <li class="sidebar-brand">
+                    <a href="~/Edging">Edging</a>
+                </li>
+            </ul>
+
+        </div>
+    @* <div id="page-content-wrapper">
+        <nav class=" navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button type="button" id="menu-tuggle" class="btn btn-primary">
+        <i class="fa fa-bars"></i>
+        <span class="sr-only">Toggle Menu</span>
+        </button>
+        </nav>
+        </div>*@
+    </div>-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1">
+                <ul class="no-bullets">
+                    <li>
+                        <a href="#" class="acss">Boards</a>
+                    </li>
+                    <li>
+                        <a href="#" class="acss">Materials</a>
+                    </li>
+                    <li>
+                        <a href="#" class="acss">Edges</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-sm-11">
+
+                <h4>Boards - <a asp-action="Create">Create New</a></h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            @*<th>
+                            @Html.DisplayNameFor(model => model._id)
+                            </th>*@
+                            <th>
+                                @Html.DisplayName("Code")
+                            </th>
+                            <th>
+                                @Html.DisplayName("Description")
+                            </th>
+                            <th>
+                                @Html.DisplayName("Length")
+                            </th>
+                            <th>
+                                @Html.DisplayName("Width")
+                            </th>
+                            <th>
+                                @Html.DisplayName("Selling Price")
+                            </th>
+                            <th>
+                                @Html.DisplayName("Stock Price")
+                            </th>
+
+                            <th>
+                                <nav class="navbar navbar-light bg-light">
+                                    <div class="container-fluid">
+                                        <form class="d-flex">
+                                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                            <button class="btn btn-outline-success" type="submit">Search</button>
+                                        </form>
+                                    </div>
+                                </nav>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @*  <td>
+                            @Html.DisplayFor(modelItem => item._id)
+                            </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.code)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.length)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.width)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.sellingprice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.stocktype)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new {  _id = item._id }) |
+                                    @Html.ActionLink("Details", "Details", new { _id = item._id}) |
+                                    @Html.ActionLink("Delete", "Delete", new {  _id = item._id })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @{
+                    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                }
+
+                <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @prevDisabled"> Previous </a>
+
+                @for (var i = 1; i <= Model.TotalPages; i++)
+                {
+                    @if (i < 11)
+                    {
+                        <li class="btn btn-default @(i == Model.CurrentPage ? "active" : "")">
+                            <a asp-action="Index" asp-route-pageNumber="@i" class="btn btn-default">@i</a>
+                        </li>
+                    }
+                    else if (i == 11)
+                    {
+                        <br />
+
+                        <li class="btn btn-default @(i == Model.CurrentPage ? "active" : "")">
+                            <a asp-action="Index" asp-route-pageNumber="@i" class="btn btn-default">@i</a>
+                        </li>
+                    }
+                    else if (i > 11 && i < 21)
+                    {
+                        <li class="btn btn-default @(i == Model.CurrentPage ? "active" : "")">
+                            <a asp-action="Index" asp-route-pageNumber="@i" class="btn btn-default">@i</a>
+                        </li>
+                    }
+
+                }
+                <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisabled"> Next </a>
+                <br />
+                Page @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex) of @Model.TotalPages
+
+            </div>
+        </div>
+    </div>
+

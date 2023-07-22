@@ -1,0 +1,64 @@
+﻿@model CutwrightsCRUD.Models.BoardsEntity
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BoardsEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreatePost">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           @* <div class="form-group">
+                <label asp-for="_id" class="control-label"></label>
+                <input asp-for="_id" class="form-control" />
+                <span asp-validation-for="_id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="code" class="control-label"></label>
+                <input asp-for="code" class="form-control" />
+                <span asp-validation-for="code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="length" class="control-label"></label>
+                <input asp-for="length" class="form-control" />
+                <span asp-validation-for="length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="width" class="control-label"></label>
+                <input asp-for="width" class="form-control" />
+                <span asp-validation-for="width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sellingprice" class="control-label"></label>
+                <input asp-for="sellingprice" class="form-control" />
+                <span asp-validation-for="sellingprice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="stocktype" class="control-label"></label>
+                <input asp-for="stocktype" class="form-control" />
+                <span asp-validation-for="stocktype" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cutwrights</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body> 
+    <nav class="navbar navbar-expand-sm ">
+        <div class="container-fluid border-dark">
+            <a class="navbar-brand fw-bold font-weight-bolder" href="#">CUTWRIGHTS</a>
+           
+            <ul class="navbar-nav text-bg-dark bg-dark-subtle ">
+                <!--<li class="nav-item"><a class="nav-link fw-bold" href="#">LOGIN</a></li>-->
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="~/Workshop">WORKSHOP</a>
+                </li>
+                <!--
+                <li class="nav-item"><a class="nav-link fw-bold" href="#">OFFICE</a></li>
+                -->
+                <li class="nav-item">       
+                    <a class="nav-link fw-bold" href="~/Admin">ADMIN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1 bg-dark-subtle">
+                        <!--<li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#">REPORTS</a>
+                        </li>-->
+                        
+
+                        <!--<li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">CMS</a>
+                        </li>-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="~/CMS" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                CMS
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="~/Pages">Pages</a>
+                                <a class="dropdown-item" href="~/BoardStocks">Board Stocks</a>
+                                <a class="dropdown-item" href="~/ContentBlocks">Content Blocks</a>
+                            </div>
+                        </li>
+
+
+                        <!--<li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#">COMMUNICATION</a>
+                        </li>-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="~/Communication" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                COMMUNICATION
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="~/Email">Email Templates</a>
+                                <a class="dropdown-item" href="~/SMS">SMS Templates</a>                                
+                            </div>
+                        </li>
+
+
+                        <!--<li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Boards" asp-action="Index">SUPPLY</a>
+                        </li>-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="~/Boards" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SUPPLY
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="~/Boards">Boards</a>
+                                <a class="dropdown-item" href="~/Materials">Materials</a>
+                                <a class="dropdown-item" href="~/Edges">Edges</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="~/NonProduct">Non-Product</a>
+
+                            </div>
+                        </li>
+
+
+                        <!--<li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">SUPPLIERS</a></li>-->
+                        <!--<li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#">SETTINGS</a>
+                        </li>-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="~/Settings" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SETTINGS
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="~/ProductCategories">Product Categories</a>
+                                <a class="dropdown-item" href="~/GlobalSettings">Global Settings</a>
+                                <a class="dropdown-item" href="~/TagGroups">Tag Groups</a>                                
+                            </div>
+                        </li>
+
+
+                        <!--<li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#">USERS</a>
+                        </li>-->
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="~/Users" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                USERS
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="~/CustomerUsers">Customer Users</a>
+                                <a class="dropdown-item" href="~/AdminUsers">Admin Users</a>                            
+                            </div>
+                        </li>
+
+
+                        <!--<li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#">AUTOTASK</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#">DRILLING</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" href="#">PRIMING</a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+       
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!--<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Cutwrights - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

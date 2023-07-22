@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @*<title>@ViewData["Title"] - Cutwrights</title>*@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-right bg-light">
+        <div class="container-fluid border-dark">
+            @*<a class="navbar-brand fw-bold font-weight-bolder" href="#">CUTWRIGHTS</a>*@
+            <img src="~/images/cutwrights.jpg" style="height:70px; width:250px;" class="navbar-brand" />
+
+            <ul class="navbar-nav text-bg-dark bg-dark-subtle ">
+                <!--<li class="nav-item"><a class="nav-link fw-bold" href="#">LOGIN</a></li>-->
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">WORKSHOP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="~/Access/LogOut">LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div id="WorkshopNavbar">
+            <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1 bg-dark-subtle">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active fw-bold" href="#">
+                                    ALL JOBS
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link fw-bold" href="#">
+                                    CUTTING
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link fw-bold" href="#">
+                                    ASSEMBLY
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link fw-bold" href="#">
+                                    EDGING
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link fw-bold" href="#">
+                                    DRILLING
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link fw-bold" href="#">
+                                    PRIMING
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <style>
+        ul.no-bullets {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .acss {
+            color: #3b1024;
+            background-color: transparent;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#WorkshopNavbar").show();
+        });
+    </script>
+</body>
+</html>
